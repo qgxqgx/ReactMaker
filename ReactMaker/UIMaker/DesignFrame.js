@@ -40,10 +40,11 @@ export default class DesignFrame extends Component {
           <View comment='中间预览区' domTreeData={this.domTreeData} style={{flex:9,backgroundColor:'green'}}>
             <PreviewPannel ref='previewPannel' domTreeData={this.domTreeData}/>
           </View>
+          <View comment='底部属性区' style={{flex:4,backgroundColor:'gray'}}>
+            <PropertyPannel ref='propertyPannel' domTreeData={this.domTreeData}/>
+          </View>
         </View>
-        <View comment='右侧属性区' style={{flex:1,backgroundColor:'gray'}}>
-          <PropertyPannel ref='propertyPannel' domTreeData={this.domTreeData}/>
-        </View>
+
 
       </View>
     );
@@ -55,5 +56,6 @@ const styles = StyleSheet.create({
   MainFrame:{
     flex:1,
     flexDirection:'row',
+    marginTop:20
   },
 });

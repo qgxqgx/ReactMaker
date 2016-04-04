@@ -26,7 +26,10 @@ function deepCopy(source) {
   return result;
 };
 
+//导出
 export default {
+
+  deepCopy:deepCopy,
 
   getAllElements(){
     return Elements;

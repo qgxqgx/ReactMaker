@@ -37,7 +37,9 @@ export default class ControlPannel extends Component {
         <TouchableHighlight onPress={this._insertElementAsSon.bind(this)}>
           <Text>【增加子元素】</Text>
         </TouchableHighlight>
-
+        <TouchableHighlight onPress={this._flushScreen.bind(this)}>
+          <Text>【刷新】</Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -103,9 +105,13 @@ export default class ControlPannel extends Component {
 
     //通知dom树刷新
     RCTDeviceEventEmitter.emit('newItemCreated',itemCreate);
-
+    //让预览界面刷新
+    RCTDeviceEventEmitter.emit('needUpdatePreview','');
   }
 
+  _flushScreen(){
+    RCTDeviceEventEmitter.emit('flushScreen','');
+  }
 
 
 
