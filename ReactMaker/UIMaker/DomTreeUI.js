@@ -97,6 +97,6 @@ export default class DomTreeUI extends Component {
 //
 var styles = StyleSheet.create({
     contentContainer: {
-      paddingVertical: 20
+      paddingVertical: 1
     }
 });

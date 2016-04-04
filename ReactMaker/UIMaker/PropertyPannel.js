@@ -28,12 +28,34 @@ export default class PropertyPannel extends Component {
     });
   }
 
+  //属性面板展示
+  getPannelRender(){
+    let ele = this.props.domTreeData.currentFocus;
+    if(ele == undefined){
+      return <View></View>
+    }
+    //根据
+    var theType = ele.componentType;
+
+
+
+  }
+
   render() {
     return (
-      <View style={{flexDirection:'row'}} >
+      <View >
+        <ScrollView contentContainerStyle={styles.contentContainer}>
+          {this.getPannelRender()}
+        </ScrollView>
 
       </View>
     );
   }
 
 }
+
+var styles = StyleSheet.create({
+    contentContainer: {
+      paddingVertical: 1
+    }
+});
